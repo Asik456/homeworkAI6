@@ -1,0 +1,47 @@
+===== paper_map =====
+V1:
+ . -1.00  M -1.00  . 10.00   G 0.00
+ . -1.00        #  I -1.00   H 0.00
+ S -1.00  . -1.00  . -1.00  . -1.00
+V2 at (1,2): {'up': -3.9, 'right': 8.0, 'down': -3.9, 'left': -1.9} -> max 8.0
+V2 at (1,3): {'up': 8.0, 'right': 10.0, 'down': -1.9, 'left': -3.9} -> max 10.0
+V2 at (2,3): {'up': 5.21, 'right': -7.39, 'down': -2.71, 'left': -0.91} -> max 5.21
+Rule checks:
+  wall: from (3,2) up -> (2, 1) (stays, (2,2) is a wall)
+  boundary: from (1,1) left -> (0, 0) (stays)
+  ice (2,3) up: probabilities sum = 1.0
+  ice (2,3) right: probabilities sum = 1.0
+  ice (2,3) down: probabilities sum = 1.0
+  ice (2,3) left: probabilities sum = 1.0
+  mud: (1,1) right -> reward -3
+  goal: (1,3) right -> reward 10, terminal = True
+Converged: True after 12 iterations, last change 2.17e-07
+Final values:
+  . 4.20   M 8.00  . 10.00   G 0.00
+  . 2.78        #   I 5.82   H 0.00
+  S 1.54   . 2.82   . 4.24   . 2.82
+Best actions (all ties shown, the first one is used):
+     →      →      →      G
+     ↑      #      ↑      H
+     →      →      ↑      ←
+batch 11: goals 42/50, holes 8/50, time limits 0/50, mean steps 4.98, mean discounted return 0.891
+batch 22: goals 46/50, holes 4/50, time limits 0/50, mean steps 5.04, mean discounted return 1.915
+batch 33: goals 48/50, holes 2/50, time limits 0/50, mean steps 5.04, mean discounted return 2.492
+V(start) = 1.536
+
+===== extended_map =====
+Sand (3,1) right -> reward -2
+Water: (3,3) right -> reward -5
+Converged: True after 11 iterations, last change 2.41e-07
+Final values:
+  . 4.20   M 8.00  . 10.00   G 0.00
+  . 2.78        #   I 5.82   H 0.00
+  S 1.50   D 2.82   . 4.24   W 2.82
+Best actions (all ties shown, the first one is used):
+     →      →      →      G
+     ↑      #      ↑      H
+     ↑      →      ↑      ←
+batch 11: goals 50/50, holes 0/50, time limits 0/50, mean steps 5.00, mean discounted return 1.502
+batch 22: goals 50/50, holes 0/50, time limits 0/50, mean steps 5.00, mean discounted return 1.502
+batch 33: goals 50/50, holes 0/50, time limits 0/50, mean steps 5.00, mean discounted return 1.502
+V(start) = 1.502
