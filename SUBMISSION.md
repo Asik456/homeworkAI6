@@ -10,7 +10,7 @@ Record dependency versions, installation commands and exact run commands.
 
 ## Part A — Paper calculations
 
-I did these calculations by hand on paper and will show the paper to the teacher in class. The same steps are written below.
+Photo of my paper work: [part_a_paper.jpg](part_a_paper.jpg). The same steps are written below.
 
 **1. The MDP in my own words.**
 - **States:** the 9 tiles where the agent can stand: (1,1), (1,2) mud, (1,3), (2,1), (2,3) ice, (3,1) start, (3,2), (3,3), (3,4). G and H are end states. The wall is not a state.
